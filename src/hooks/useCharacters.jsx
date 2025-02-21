@@ -23,20 +23,18 @@ export default function useCharacters({ initialCharacterArray }) {
 
   const chart = currentChart.map((kana) => {
     const isSelected = characterArray.some((c) => c.kana === kana.kana);
-    const className = `text-2xl cursor-pointer ${
+    const className = `text-2xl p-4 group-hover:text-blue-500 ${
       isSelected ? "underline decoration-blue-500 decoration-4" : ""
     }`;
 
     return (
-      <p
-        className={className}
+      <div
+        className="cursor-pointer place-items-center group"
         key={kana.kana}
-        onClick={() => {
-          toggleCharacterInArray(kana);
-        }}
+        value={kana}
       >
-        {kana.kana}
-      </p>
+        <p className={className}>{kana.kana}</p>
+      </div>
     );
   });
 
@@ -50,5 +48,6 @@ export default function useCharacters({ initialCharacterArray }) {
     isHiraganaChart,
     setIsHiraganaChart,
     clearCharacters,
+    toggleCharacterInArray,
   };
 }

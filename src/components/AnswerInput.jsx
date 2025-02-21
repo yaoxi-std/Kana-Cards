@@ -21,7 +21,6 @@ export default function AnswerInput({
     <form
       id="myform"
       onSubmit={(event) => handleSubmit(event)}
-      autoComplete="off"
     >
       {!pause && (
         <input
@@ -30,6 +29,10 @@ export default function AnswerInput({
           type="text"
           value={input}
           onChange={handleChange}
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
           className="block w-24 mx-auto pb-2 bg-transparent border-b-2 border-b-black outline-none
               text-center text-2xl "
         />

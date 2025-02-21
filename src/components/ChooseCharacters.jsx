@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import useCharacters from "../hooks/useCharacters";
 
 import PropTypes from "prop-types";
@@ -13,7 +13,16 @@ export default function ChooseCharacters({
     chart,
     isHiraganaChart,
     clearCharacters,
+    toggleCharacterInArray,
   } = useCharacters({ initialCharacterArray });
+
+  const [isDragging, setIsDragging] = useState(false);
+
+  useEffect(() => {
+    const handleMouseUp = () => setIsDragging(false);
+    document.addEventListener("mouseup", handleMouseUp);
+    return () => document.removeEventListener("mouseup", handleMouseUp);
+  }, []);
 
   return (
     <>
@@ -31,8 +40,26 @@ export default function ChooseCharacters({
               {isHiraganaChart ? "Show Katakana" : "Show Hiragana"}
             </button>
           </div>
-          <div className="grid grid-cols-5 grid-rows-10 gap-6 gap-x-12">
-            {chart}
+          <div className="grid grid-cols-5 grid-rows-10 gap-2 gap-x-8">
+            {React.Children.toArray(chart).map((child) => {
+              if (React.isValidElement(child) && child.props.value) {
+                const kana = child.props.value;
+                return React.cloneElement(child, {
+                  onMouseDown: (e) => {
+                    e.preventDefault();
+                    setIsDragging(true);
+                    toggleCharacterInArray(kana);
+                  },
+                  onMouseEnter: (e) => {
+                    if (isDragging) {
+                      e.preventDefault();
+                      toggleCharacterInArray(kana);
+                    }
+                  },
+                });
+              }
+              return child;
+            })}
           </div>
           <div className="border-t border-solid border-slate-200 rounded-b p-4 mt-8">
             <div className="flex justify-between ">
