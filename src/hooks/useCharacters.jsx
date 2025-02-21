@@ -40,10 +40,15 @@ export default function useCharacters({ initialCharacterArray }) {
     );
   });
 
+  function clearCharacters() {
+    setCharacterArray([]);
+  }
+
   return {
     characterArray,
     chart,
     isHiraganaChart,
     setIsHiraganaChart,
+    clearCharacters,
   };
 }
