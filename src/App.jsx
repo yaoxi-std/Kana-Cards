@@ -57,15 +57,22 @@ function App() {
               Quiz
             </h1>
             <ChooseQuizMode
+              quizType={quizType}
               handleQuizType={handleQuizType}
               // openChooseQuizModal={openChooseQuizModal}
             />
 
             {quizType != "custom" && (
-              <ChooseDakutan handleDakutan={handleDakutan} />
+              <ChooseDakutan
+                isDakutan={isDakutan}
+                handleDakutan={handleDakutan}
+              />
             )}
 
-            <ChooseRandomFont handleRandomFont={handleRandomFont} />
+            <ChooseRandomFont
+              isRandomFont={isRandomFont}
+              handleRandomFont={handleRandomFont}
+            />
 
             <ChooseDifficulty
               handleDifficulty={handleDifficulty}
