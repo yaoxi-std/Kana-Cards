@@ -29,10 +29,10 @@ export default function AnswerInput({
           type="text"
           value={input}
           onChange={handleChange}
-          autocomplete="off"
-          autocorrect="off"
-          autocapitalize="off"
-          spellcheck="false"
+          autoComplete="off"
+          autoCorrect="off"
+          autoCapitalize="off"
+          spellCheck="false"
           className="block w-24 mx-auto pb-2 bg-transparent border-b-2 border-b-black outline-none
               text-center text-2xl "
         />
