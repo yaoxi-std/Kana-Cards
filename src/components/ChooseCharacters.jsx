@@ -31,7 +31,7 @@ export default function ChooseCharacters({
         className="fixed inset-0 z-50 outline-none mobile-card bg-black bg-opacity-25"
       >
         <div className="flex items-start justify-center p-4">
-          <div className="text-black max-w-lg rounded-lg shadow-lg bg-white soft-shadow pt-20 pr-12 pl-12 sm:pr-12 sm:pl-12 md:pl-20 md:pr-20 pb-16">
+          <div className="text-black rounded-lg shadow-lg bg-white soft-shadow pt-8 sm:pt-20 px-4 sm:px-12 md:px-20 pb-8 sm:pb-16 w-full max-w-lg">
             <div className="flex justify-between mb-4">
               <button
                 className="background-transparent text-sm outline-none focus:outline-none ease-linear transition-all duration-150"
@@ -42,7 +42,7 @@ export default function ChooseCharacters({
               </button>
             </div>
             <div className="flex flex-col">
-              <div className="grid md:grid-cols-5 gap-2 gap-x-8 max-h-[calc(100vh-20rem)] overflow-x-hidden overflow-y-auto w-full grow no-scrollbar scroll-blur">
+              <div className="grid grid-cols-5 gap-2 gap-x-8 max-h-[calc(100vh-20rem)] overflow-x-auto overflow-y-auto w-full grow no-scrollbar scroll-blur">
                 {React.Children.toArray(chart).map((child) => {
                   if (React.isValidElement(child) && child.props.value) {
                     const kana = child.props.value;

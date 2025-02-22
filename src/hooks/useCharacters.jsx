@@ -29,7 +29,7 @@ export default function useCharacters({ initialCharacterArray }) {
 
     return (
       <div
-        className="cursor-pointer place-items-center group"
+        className="cursor-pointer place-items-center group w-full"
         key={kana.kana}
         value={kana}
       >
