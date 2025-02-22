@@ -9,19 +9,15 @@ export default function AnswerInput({
   handleSubmit,
   handleChange,
 }) {
-
-    //focus on input when quiz starts
-    useEffect(() => {
-        const x = document.getElementById("kanaInput");
-        x.focus({
-          preventScroll: true,
-        });
-    }, []);
+  //focus on input when quiz starts
+  useEffect(() => {
+    const x = document.getElementById("kanaInput");
+    x.focus({
+      preventScroll: true,
+    });
+  }, []);
   return (
-    <form
-      id="myform"
-      onSubmit={(event) => handleSubmit(event)}
-    >
+    <form id="myform" onSubmit={(event) => handleSubmit(event)}>
       {!pause && (
         <input
           id="kanaInput"
@@ -55,5 +51,5 @@ AnswerInput.propTypes = {
   input: PropTypes.string.isRequired,
   pause: PropTypes.bool.isRequired,
   handleSubmit: PropTypes.func.isRequired,
-  handleChange: PropTypes.func.isRequired
+  handleChange: PropTypes.func.isRequired,
 };
