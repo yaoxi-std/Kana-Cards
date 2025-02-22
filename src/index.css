@@ -1,45 +1,62 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-
 :root {
+  --offset-before: 8px;
+  --offset-after: 16px;
+  --card-border-color: #e2d9d5;
+}
 
-    --offset-before: 8px;
-    --offset-after: 16px;
-    --card-border-color: #e2d9d5;
-
-  }
-
-h1  {
-    font-family: 'General Sans', sans-serif;
-  }
+h1 {
+  font-family: "General Sans", sans-serif;
+}
 
 button {
-    font-family: 'General Sans', sans-serif;
-  }
+  font-family: "General Sans", sans-serif;
+}
 
-  
-.soft-shadow{
-    box-shadow: rgb(17 12 46 / 15%) 0px 48px 100px 0px;
-  }
+.soft-shadow {
+  box-shadow: rgb(17 12 46 / 15%) 0px 48px 100px 0px;
+}
 
 @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+  0% {
+    opacity: 0;
   }
+  100% {
+    opacity: 1;
+  }
+}
 
 hr {
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    border: 0;
-    height: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  } 
-  
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
 
- 
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .scroll-blur {
+    mask-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0px,
+      rgba(0, 0, 0, 1) 30px,
+      rgba(0, 0, 0, 1) calc(100% - 30px),
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+}
