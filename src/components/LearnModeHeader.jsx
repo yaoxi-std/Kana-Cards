@@ -17,7 +17,7 @@ export default function LearnModeHeader({ kana, current }) {
 
 LearnModeHeader.propTypes = {
   kana: PropTypes.shape({
-    romanji: PropTypes.string,
+    romaji: PropTypes.string,
     kana: PropTypes.string,
     iamge: PropTypes.string,
     audio: PropTypes.string,

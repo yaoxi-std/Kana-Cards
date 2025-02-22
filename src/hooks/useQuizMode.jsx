@@ -87,10 +87,10 @@ export default function useQuizMode(props) {
 
   const correctInput = () => {
     if (
-      (kana[current].romanji === "fu/hu" &&
+      (kana[current].romaji === "fu/hu" &&
         (input.trim().toLowerCase() === "fu" ||
           input.trim().toLowerCase() === "hu")) ||
-      input.trim().toLowerCase() === kana[current].romanji
+      input.trim().toLowerCase() === kana[current].romaji
     ) {
       return true;
     }
@@ -132,7 +132,7 @@ export default function useQuizMode(props) {
       setStreak(0);
       setPause(true);
       setError(`The correct answer for 
-        ${kana[current].kana} is ${kana[current].romanji}`);
+        ${kana[current].kana} is ${kana[current].romaji}`);
       // localStorage.setItem('streak',0)
       setTimerIsActive(true);
     }

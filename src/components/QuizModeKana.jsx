@@ -29,7 +29,7 @@ QuizModeKana.propTypes = {
     fontFamily: PropTypes.string,
   }),
   kana: PropTypes.shape({
-    romanji: PropTypes.string,
+    romaji: PropTypes.string,
     kana: PropTypes.string,
     iamge: PropTypes.string,
     audio: PropTypes.string,

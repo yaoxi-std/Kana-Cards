@@ -28,7 +28,7 @@ export default function KanaMnemonic({ kana, current }) {
 
 KanaMnemonic.propTypes = {
   kana: PropTypes.shape({
-    romanji: PropTypes.string,
+    romaji: PropTypes.string,
     kana: PropTypes.string,
     iamge: PropTypes.string,
     audio: PropTypes.string,
